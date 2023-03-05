@@ -1,0 +1,98 @@
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition
+#: import SlideTransition kivy.uix.screenmanager.SlideTransition
+
+# Main menu stuff
+<MainMenu>
+
+    # App background
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: root.background
+
+    # Float layout
+    FloatLayout:
+
+        # Action bar layout
+        Button:
+            size_hint: 1, None
+            height: "100dp"
+            pos_hint: {"top": 1}
+            disabled: True 
+            background_normal: ''
+            background_disabled_normal: ''
+            background_color: "00dd00"
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, .1
+                Line:
+                    width: 3
+                    rectangle: self.x, self.y, self.width, self.height
+        
+        # Action bar label
+        Label:
+            size_hint: 1 , None
+            height: "30dp"
+            pos_hint: {"center_x": 0.5, "top":1}
+            halign: "left"
+            markup: True 
+            font_name: root.font
+            font_size: "18sp"
+            text: " </ SigNull \\>"
+            color: "000000"
+
+        # Home button
+        ImageButton:
+            pos_hint: {"center_x": .125, "center_y": 0.9}
+            size_hint: 0.1, 0.1
+            source: "Assets/home.png"
+
+        # Console button
+        ImageButton:
+            pos_hint: {"center_x": .385, "center_y": 0.9}
+            size_hint: 0.1, 0.1
+            source: "Assets/console_out.png"
+            on_press:
+                root.manager.transition = FadeTransition(duration=0.05)
+                root.manager.current = 'Console'
+           
+        # Notification button
+        ImageButton:
+            pos_hint: {"center_x": .625, "center_y": 0.9}
+            size_hint: 0.1, 0.1
+            source: "Assets/notification_out.png"
+            on_press:
+                root.manager.transition = FadeTransition(duration=0.05)
+                root.manager.current = 'Notification'
+
+        # Profile button
+        ImageButton:
+            pos_hint: {"center_x": .875, "center_y": 0.9}
+            size_hint: 0.1, 0.1
+            source: "Assets/profile_out.png"
+            on_press:
+                root.get_data()
+                root.manager.transition = FadeTransition(duration=0.05)
+                root.manager.current = 'Profile'
+
+        # # Logo
+        # Image:
+        #     source: 'Assets/menu.gif'
+        #     pos_hint: {"center_x":0.5, "center_y": 0.4}
+        #     size_hint: .6, .6
+        #     allow_stretch: True
+        #     anim_delay: 0.05
+        #     mipmap: True
+
+        # Version
+        Label:
+            pos_hint: {"center_x": 0.5, "bottom": 1}
+            size_hint: 0.7, None
+            height: "40dp"
+            halign: "center"
+            font_name: root.font
+            markup: True
+            color: "00aa00" 
+            text: "SigNull version x.X.x"
+            font_size: 16             
