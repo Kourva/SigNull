@@ -20,7 +20,7 @@ git clone https://github.com/Kourva/SigNull & cd SigNull
 ```
 + requirements
 ```bash
-chmod Lib/install.sh && ./Lib/install.sh
+chmod +x Lib/install.sh && ./Lib/install.sh
 ```
 + run
 ```bash
