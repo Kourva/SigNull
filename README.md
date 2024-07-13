@@ -16,7 +16,7 @@
 # Setup
 + clone
 ```bash
-git clone https://github.com/Kourva/SigNull & cd SigNull
+git clone https://github.com/kozyol/SigNull & cd SigNull
 ```
 + requirements
 ```bash
