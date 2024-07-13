@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
 
-#  Author  : Kourva
-#  Github  : https://github.com/kourva/SigNull
+#  Author  : kozyol
+#  Github  : https://github.com/kozyol/SigNull
 
 
 # This is test version!!
